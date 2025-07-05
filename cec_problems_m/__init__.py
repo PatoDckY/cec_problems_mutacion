@@ -1,0 +1,43 @@
+# cec_problems/__init__.py
+
+from .problemascec2010 import (
+    ProblemaC01,
+    ProblemaC02,
+    ProblemaC03,
+    ProblemaC04,
+    ProblemaC05,
+    ProblemaC06,
+    ProblemaC07,
+    ProblemaC08,
+    ProblemaC09,
+    ProblemaC10,
+    ProblemaC11,
+    ProblemaC12,
+    ProblemaC13,
+    ProblemaC14,
+    ProblemaC15,
+    ProblemaC16,
+    ProblemaC17,
+    ProblemaC18,
+)
+
+__all__ = [
+    "ProblemaC01",
+    "ProblemaC02",
+    "ProblemaC03",
+    "ProblemaC04",
+    "ProblemaC05",
+    "ProblemaC06",
+    "ProblemaC07",
+    "ProblemaC08",
+    "ProblemaC09",
+    "ProblemaC10",
+    "ProblemaC11",
+    "ProblemaC12",
+    "ProblemaC13",
+    "ProblemaC14",
+    "ProblemaC15",
+    "ProblemaC16",
+    "ProblemaC17",
+    "ProblemaC18",
+]
