@@ -361,10 +361,9 @@ class ProblemaC06:
     def get_limites(self):
         return self.lower_bounds, self.upper_bounds
 
-    def generar_m(self, seed=None):
-        if seed:
-            np.random.seed(seed)
-        A = np.random.randn(self.D, self.D)
+   def generar_m(self, seed=None):
+        rng = np.random.RandomState(seed)
+        A = rng.randn(self.D, self.D)
         Q, _ = np.linalg.qr(A)
         return Q
 
@@ -485,10 +484,9 @@ class ProblemaC08:
     def get_limites(self):
         return self.lower_bounds, self.upper_bounds
 
-    def generar_m(self, seed=None):
-        if seed:
-            np.random.seed(seed)
-        A = np.random.randn(self.D, self.D)
+   def generar_m(self, seed=None):
+        rng = np.random.RandomState(seed)
+        A = rng.randn(self.D, self.D)
         Q, _ = np.linalg.qr(A)
         return Q
 
@@ -596,10 +594,9 @@ class ProblemaC10:
     def get_limites(self):
         return self.lower_bounds, self.upper_bounds
 
-    def generar_m(self, seed=None):
-        if seed is not None:
-            np.random.seed(seed)
-        A = np.random.randn(self.D, self.D)
+   def generar_m(self, seed=None):
+        rng = np.random.RandomState(seed)
+        A = rng.randn(self.D, self.D)
         Q, _ = np.linalg.qr(A)
         return Q
 
@@ -660,10 +657,9 @@ class ProblemaC11:
     def get_limites(self):
         return self.lower_bounds, self.upper_bounds
 
-    def generar_m(self, seed=None):
-        if seed is not None:
-            np.random.seed(seed)
-        A = np.random.randn(self.D, self.D)
+   def generar_m(self, seed=None):
+        rng = np.random.RandomState(seed)
+        A = rng.randn(self.D, self.D)
         Q, _ = np.linalg.qr(A)
         return Q
 
@@ -929,10 +925,9 @@ class ProblemaC15:
     def get_limites(self):
         return self.lower_bounds, self.upper_bounds
 
-    def generar_m(self, seed=None):
-        if seed:
-            np.random.seed(seed)
-        A = np.random.randn(self.D, self.D)
+   def generar_m(self, seed=None):
+        rng = np.random.RandomState(seed)
+        A = rng.randn(self.D, self.D)
         Q, _ = np.linalg.qr(A)
         return Q
 
