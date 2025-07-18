@@ -360,6 +360,7 @@ class ProblemaC06:
     
     def get_limites(self):
         return self.lower_bounds, self.upper_bounds
+    
     def generar_m(self, seed=None):
         rng = np.random.RandomState(seed)
         A = rng.randn(self.D, self.D)
