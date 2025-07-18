@@ -357,7 +357,7 @@ class ProblemaC06:
         self.lower_bounds = np.full(self.D, -600)
         self.upper_bounds = np.full(self.D,  600)
         self.m            = self.generar_m(42)
-    
+        
     def get_limites(self):
         return self.lower_bounds, self.upper_bounds
     
@@ -411,8 +411,7 @@ class ProblemaC06:
             max(0.0, abs(self.h2(x)) - self.tolerance)
         ])
         # Funciones restricciones para gradiente
-        funcs = [lambda v: self.h1(v),
-                 lambda v: self.h2(v)]
+        funcs = [lambda v: self.h1(v), lambda v: self.h2(v)]
         # Jacobiana usando _num_grad de ProblemaC01
         J = np.vstack([
             ProblemaC01._num_grad(f, x, self.tolerance) for f in funcs
