@@ -350,7 +350,7 @@ class ProblemaC05:
 """## C06"""
 
 class ProblemaC06:
-   def __init__(self, offset):
+    def __init__(self, offset):
         self.tolerance    = 1e-4
         self.offset       = np.asarray(offset, dtype=float)
         self.D            = len(self.offset)
@@ -358,15 +358,15 @@ class ProblemaC06:
         self.upper_bounds = np.full(self.D,  600)
         self.m            = self.generar_m(42)
     
-   def get_limites(self):
+    def get_limites(self):
         return self.lower_bounds, self.upper_bounds
-
-   def generar_m(self, seed=None):
+    
+    def generar_m(self, seed=None):
         rng = np.random.RandomState(seed)
         A = rng.randn(self.D, self.D)
         Q, _ = np.linalg.qr(A)
         return Q
-
+    
     def evaluate(self, individuo):
         self.x = np.asarray(individuo, dtype=float)
         self.z = self.x - self.offset
@@ -374,10 +374,10 @@ class ProblemaC06:
         fitness          = self.aptitud()
         suma_violaciones = self.sumar_violation()
         return fitness, suma_violaciones
-
+    
     def aptitud(self):
         return np.max(self.z)
-
+    
     def h1(self, x=None):
         if x is None:
             y = self.y
@@ -386,7 +386,7 @@ class ProblemaC06:
             y = (x + 483.6106156535 - self.offset) @ self.m - 483.6106156535
         restr = -y * np.sin(np.sqrt(np.abs(y)))
         return np.sum(restr) / self.D
-
+    
     def h2(self, x=None):
         if x is None:
             y = self.y
@@ -394,12 +394,12 @@ class ProblemaC06:
             y = (np.asarray(x, dtype=float) + 483.6106156535 - self.offset) @ self.m - 483.6106156535
         restr = -y * np.cos(0.5 * np.sqrt(np.abs(y)))
         return np.sum(restr) / self.D
-
+    
     def sumar_violation(self):
         v1 = max(0.0, abs(self.h1()) - self.tolerance)
         v2 = max(0.0, abs(self.h2()) - self.tolerance)
         return v1 + v2
-
+    
     def viol_and_jac(self, individuo):
         x = np.asarray(individuo, dtype=float)
         # Recalcular z e y
