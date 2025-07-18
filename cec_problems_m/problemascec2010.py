@@ -484,7 +484,7 @@ class ProblemaC08:
     def get_limites(self):
         return self.lower_bounds, self.upper_bounds
 
-   def generar_m(self, seed=None):
+    def generar_m(self, seed=None):
         rng = np.random.RandomState(seed)
         A = rng.randn(self.D, self.D)
         Q, _ = np.linalg.qr(A)
@@ -594,7 +594,7 @@ class ProblemaC10:
     def get_limites(self):
         return self.lower_bounds, self.upper_bounds
 
-   def generar_m(self, seed=None):
+    def generar_m(self, seed=None):
         rng = np.random.RandomState(seed)
         A = rng.randn(self.D, self.D)
         Q, _ = np.linalg.qr(A)
@@ -657,7 +657,7 @@ class ProblemaC11:
     def get_limites(self):
         return self.lower_bounds, self.upper_bounds
 
-   def generar_m(self, seed=None):
+    def generar_m(self, seed=None):
         rng = np.random.RandomState(seed)
         A = rng.randn(self.D, self.D)
         Q, _ = np.linalg.qr(A)
@@ -925,7 +925,7 @@ class ProblemaC15:
     def get_limites(self):
         return self.lower_bounds, self.upper_bounds
 
-   def generar_m(self, seed=None):
+    def generar_m(self, seed=None):
         rng = np.random.RandomState(seed)
         A = rng.randn(self.D, self.D)
         Q, _ = np.linalg.qr(A)
