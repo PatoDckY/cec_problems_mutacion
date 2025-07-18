@@ -350,15 +350,15 @@ class ProblemaC05:
 """## C06"""
 
 class ProblemaC06:
-    def __init__(self, offset):
+   def __init__(self, offset):
         self.tolerance    = 1e-4
         self.offset       = np.asarray(offset, dtype=float)
         self.D            = len(self.offset)
         self.lower_bounds = np.full(self.D, -600)
         self.upper_bounds = np.full(self.D,  600)
         self.m            = self.generar_m(42)
-
-    def get_limites(self):
+    
+   def get_limites(self):
         return self.lower_bounds, self.upper_bounds
 
    def generar_m(self, seed=None):
