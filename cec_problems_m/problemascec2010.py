@@ -502,15 +502,10 @@ class ProblemaC08:
         term2 = (self.z[:-1] - 1)**2
         return np.sum(term1 + term2)
 
-    def g1(self, x=None):
-        if x is None:
-            y = self.y
-        else:
-            z = np.asarray(x, dtype=float) - self.offset
-            y = z @ self.m
-        term1 = 0.5 - np.exp(-0.1 * np.sqrt((1 / self.D) * np.sum(y**2)))
-        term2 = 3 - np.exp((1 / self.D) * np.sum(np.cos(0.1 * y)))
-        return term1 - term2 + np.exp(1)
+    def g1(self):
+        term1 = 0.5 - np.exp(-0.1 * np.sqrt(1 / self.D * np.sum(self.y**2)))
+        term2 = -3 - np.exp(1 / self.D * np.sum(np.cos(0.1 * self.y)))
+        return term1 + term2 + np.exp(1)
 
     def sumar_violation(self):
         v1 = max(0.0, self.g1())
